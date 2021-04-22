@@ -1,0 +1,35 @@
+<div class="jumbotron">
+          <div class="jumb-top">
+            <a class=title>This article is part of a series.</a>
+            <div class="collapse testing" id="collapseExample">
+              <div>
+                <ol>
+                  {% include series.html %}
+                </ol>
+              </div>
+            </div>
+          </div>
+          <div class="jumb-bottom"></div>
+            <a id="table-of-contents" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              <span id="arrow">▼ </span> <span id="oc">open</span>
+            </a>
+          </div>
+        </div>
+
+
+<script>
+    //  table of contents 
+    document.getElementById("table-of-contents").addEventListener("click", function () {
+          var test = document.getElementById("table-of-contents").getAttribute("aria-expanded")
+
+          if (test == "true") {
+              document.getElementById("arrow").innerHTML = "▼ ";
+              document.getElementById("oc").innerHTML = "open";
+            } 
+          else {
+              document.getElementById("arrow").innerHTML = "▲ ";
+              document.getElementById("oc").innerHTML = "close";
+            }
+          });
+</script>
+        

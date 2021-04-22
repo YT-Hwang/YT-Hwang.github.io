@@ -1,0 +1,30 @@
+I"¯<h2 id="soccer-is-my-favorite-sport">Soccer is My Favorite Sport</h2>
+
+<p>Soccer has been my favorite sport since I was very young.
+In my childhood diary, you can find everything about soccer games that I watched - date, time, place, weather, even who scored or assisted when.</p>
+
+<p>I would have been able to get the information from online, but I was that serious about soccer.
+Or maybe my interest in data started to grow since then.</p>
+
+<p>Despite my passion about soccer and interest in data, when it comes to Fantasy Soccer League, I did not do a good job managing my fantasy team by predicting and optimizing properly.</p>
+
+<p>My soccer teammates and I have been playing Offical Fantasy England Premiere League(EPL) for many years, but I ended up to be placed in a mid-rank.</p>
+
+<p>So, for the next season, I decided to utilize my data science skill to test if data-driven approach will help me to win.</p>
+
+<h2 id="what-is-fantasy-england-premiere-league-epl">What is Fantasy England Premiere League (EPL)?</h2>
+
+<p>For those who are not familiar with fantasy game, fantasy sports games are online prediction games that you put together a virtual team of real sports players. You earn points based on real life statistics that are converted into fantasy points. The better your player performs in real life, the higher your fantasy points.</p>
+
+<p>You play against other fantasy players and their teams. Everybody manages a roster by adding, dropping, trading and selling players to keep winning.</p>
+
+<h2 id="how-data-science-can-help">How Data Science can Help?</h2>
+
+<ol>
+  <li>By analyzing data, I will be able to have some idea that which factors or variables correlate with points that each player earns.</li>
+  <li>Then, Using those variables, I will be able to build a model that predicts how many points each playere will earn in the upcomming week.</li>
+  <li>Lastly, I will also be able to form a team that maximizes the predicted points with money that I have in my account.</li>
+</ol>
+
+<p>I am not sure how much this will improve my score, but even if it doesnâ€™t a lot, it is worthwhile to spend time to apply data science to my favorite hobby. Who knows, it perhaps might get me some prizes!</p>
+:ET

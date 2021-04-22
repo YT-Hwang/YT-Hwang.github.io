@@ -13,6 +13,9 @@ layout: default
     font-size: 15px;
     margin-left: 12px;
   }
+  .jumbotron{
+    width: 100%;
+  }
   .jumb-top{
     width: 100%;
     height: 80%;
@@ -36,7 +39,7 @@ layout: default
     margin-top: 30px;
   }
   </style>
-  
+
 <!-- Page Header -->
 {% if page.background %}
 <header class="masthead" style="background-image: url('{{ page.background | prepend: site.baseurl | replace: '//', '/' }}')">
@@ -55,41 +58,35 @@ layout: default
             <span class="meta">
               {{ page.date | date: '%B %d, %Y' }} &middot; {% include read_time.html
               content=page.content %}
-            </span>
+             </span>
+             <span class="meta">
+                <!-- Browse by Category Start-->
+              <div class="container" >
+                <div id="archives">browse by <a title="Posts by Category" href="/categoryview/">category</a>
+                </div>
+              </div>
+              <!-- Browse by Category End -->
+             </span>
           </div>
         </div>
       </div>
     </div>
   </header>
 
+
+
+<!-- Container -->
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
 
-        <div class="jumbotron">
-          <div class="jumb-top">
-            <a class=title href="#">This is Title</a>
-            <div class="collapse testing" id="collapseExample">
-              <div>
-                <ol>
-                  <li> <a href="#"> first </a></li>
-                  <li> <a href="#"> second </a></li>
-                </ol>
-              </div>
-            </div>
-          </div>
-          <div class="jumb-bottom"></div>
-            <a id="table-of-contents" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-              <span id="arrow">▼ </span> <span id="oc">open</span>
-            </a>
-          </div>
-        </div>
-
+        {% include table-of-contents.html %}
         {{ content }}
+        
 
         <hr>
 
-        <div class="clearfix">
+        <!-- <div class="clearfix">
 
           {% if page.previous.url %}
           <a class="btn btn-primary float-left" href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{ page.previous.title }}">&larr; Previous<span class="d-none d-md-inline">
@@ -100,45 +97,29 @@ layout: default
               Post</span> &rarr;</a>
           {% endif %}
           
-        </div>
-
-        <div id="disqus_thread"></div>
-        <script>
-            //  table of contents 
-            document.getElementById("table-of-contents").addEventListener("click", function () {
-            var test = document.getElementById("table-of-contents").getAttribute("aria-expanded")
-
-            if (test == "true") {
-                document.getElementById("arrow").innerHTML = "▼ ";
-                document.getElementById("oc").innerHTML = "open";
-              } 
-            else {
-                document.getElementById("arrow").innerHTML = "▲ ";
-                document.getElementById("oc").innerHTML = "close";
-              }
-            });
-           
-            /**
-            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-            /*
-            var disqus_config = function () {
-            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-            };
-            */
-           
-            (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'https://https-yt-hwang-github-io.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-            })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </div>    -->
       </div>
-      
-
-    </div>
+      <div id="disqus_thread"></div>
+      <script>
+        
+          /**
+          *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+          *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+          /*
+          var disqus_config = function () {
+          this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+          this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+          };
+          */
+         
+          (function() { // DON'T EDIT BELOW THIS LINE
+          var d = document, s = d.createElement('script');
+          s.src = 'https://https-yt-hwang-github-io.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+          })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>   
   </div>
-
+</header>
