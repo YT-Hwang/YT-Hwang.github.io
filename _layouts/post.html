@@ -41,7 +41,10 @@ layout: default
   .content {
     display: block;
   }
-
+  .tags{
+    font-weight: bold;
+    color:rgb(247, 140, 158)
+  }
   </style>
  
 <!-- Page Header -->
@@ -62,12 +65,20 @@ layout: default
             <span class="meta">
               {{ page.date | date: '%B %d, %Y' }} &middot; {% include read_time.html
               content=page.content %}
-             </span>
-             <span class="meta">
+            </span>
+            <span class="meta">
+              [
+                {% for tag in page.tags %}
+                  {% capture tag_name %}{{ tag }}{% endcapture %}
+                  <a href="/tag/{{ tag_name }}"><code class="highligher-rouge tags"><nobr>🔖{{ tag_name }}</nobr></code>&nbsp;</a>
+                {% endfor %}
+              ] ---- need better position for tags
+              </span>
               <!-- Browse by Category Start-->
-              <div id="archives"><a title="Posts by Category" href="/categoryview/">category</a></div>
+              <!-- <div id="archives"><a title="Posts by Category" href="/categoryview/">category ---- under post section of nav bar</a></div> -->
               <!-- Browse by Category End -->
-             </span>
+             
+            </span>
           </div>
         </div>
       </div>
@@ -81,7 +92,8 @@ layout: default
         {% include table-of-contents.html %}
       </div>
       <div class="col-lg-8 col-md-10 mx-auto content">
-        {{ content }}       
+        {{ content }}   
+        {% include tag_archive.html %}     
       </div>
         <hr>
 
