@@ -38,8 +38,12 @@ layout: default
   .testing {
     margin-top: 30px;
   }
-  </style>
+  .content {
+    display: block;
+  }
 
+  </style>
+ 
 <!-- Page Header -->
 {% if page.background %}
 <header class="masthead" style="background-image: url('{{ page.background | prepend: site.baseurl | replace: '//', '/' }}')">
@@ -60,11 +64,8 @@ layout: default
               content=page.content %}
              </span>
              <span class="meta">
-                <!-- Browse by Category Start-->
-              <div class="container" >
-                <div id="archives">browse by <a title="Posts by Category" href="/categoryview/">category</a>
-                </div>
-              </div>
+              <!-- Browse by Category Start-->
+              <div id="archives"><a title="Posts by Category" href="/categoryview/">category</a></div>
               <!-- Browse by Category End -->
              </span>
           </div>
@@ -72,18 +73,16 @@ layout: default
       </div>
     </div>
   </header>
-
-
-
+</header>
 <!-- Container -->
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-
+      <div class="col-lg-8 col-md-10 mx-auto toc">
         {% include table-of-contents.html %}
-        {{ content }}
-        
-
+      </div>
+      <div class="col-lg-8 col-md-10 mx-auto content">
+        {{ content }}       
+      </div>
         <hr>
 
         <!-- <div class="clearfix">
@@ -98,8 +97,9 @@ layout: default
           {% endif %}
           
         </div>    -->
+        <div id="disqus_thread"></div>
       </div>
-      <div id="disqus_thread"></div>
+      
       <script>
         
           /**
@@ -122,4 +122,4 @@ layout: default
       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>   
   </div>
-</header>
+
