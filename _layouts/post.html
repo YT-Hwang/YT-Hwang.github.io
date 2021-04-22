@@ -45,14 +45,20 @@ layout: default
     font-weight: bold;
     color:rgb(247, 140, 158)
   }
+  .material-icons.md-18 { 
+    font-size: 18px; 
+    color: white;
+  }
   </style>
- 
+  
+
 <!-- Page Header -->
 {% if page.background %}
 <header class="masthead" style="background-image: url('{{ page.background | prepend: site.baseurl | replace: '//', '/' }}')">
   {% else %}
   <header class="masthead">
     {% endif %}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
@@ -70,7 +76,7 @@ layout: default
               [
                 {% for tag in page.tags %}
                   {% capture tag_name %}{{ tag }}{% endcapture %}
-                  <a href="/tag/{{ tag_name }}"><code class="highligher-rouge tags"><nobr>🔖{{ tag_name }}</nobr></code>&nbsp;</a>
+                  <i class="material-icons md-18">local_offer</i><a href="/tag/{{ tag_name }}"><code class="highligher-rouge tags"><nobr>{{ tag_name }}</nobr></code>&nbsp;</a>
                 {% endfor %}
               ] ---- need better position for tags
               </span>
